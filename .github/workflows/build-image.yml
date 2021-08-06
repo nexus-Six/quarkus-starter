@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MVN: mvn --show-version --batch-mode
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: mvn clean compile
+        run: $MVN clean compile
+      - name: mvn test
+        run: $MVN test
+      - name: mvn package -DskipTests
