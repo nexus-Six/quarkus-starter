@@ -19,4 +19,6 @@ jobs:
       - name: mvn package -DskipTests
         run: $MVN package -DskipTests
       - name: mvn package -DskipTests -Pnative
-        run: $MVN package -DskipTests -Pnative 
+        run: $MVN package -DskipTests -Pnative
+      - name: mvn verify -Pnative  
+        run: $MVN verify -Pnative
