@@ -17,3 +17,4 @@ jobs:
       - name: mvn test
         run: $MVN test
       - name: mvn package -DskipTests
+        run: $MVN package -DskipTests
